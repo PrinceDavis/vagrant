@@ -25,7 +25,7 @@ yum install phpMyAdmin
 
 ##mysql
 echo "installing mysql"
-yum install mariadb-server mariadb
+yum install -y mariadb-server mariadb
 systemctl start mariadb.service
 systemctl enable mariadb.service
 mysql -u root -e "SHOW DATABASES";
