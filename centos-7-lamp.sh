@@ -1,11 +1,11 @@
 #!/bin/bash
 ##updating centos with patches
-echo "upating packages including kernels...."
-yum update -y 
+echo "upating packages excluding kernels...."
+yum update -y --exclude=kernel
 
 ##installing tools
 echo "installing system application like nano..."
-yum install -y nano vim git unzip screen wget curl
+yum install -y nano vim git unzip screen telnet wget curl
 
 ##installing apache
 echo "installing apache...."
