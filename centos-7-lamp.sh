@@ -13,7 +13,7 @@ yum install -y httpd
 systemctl enable httpd.service
 systemctl stop httpd.service
 rm -rf /var/www/html
-ln -s /vagrant /var/www/html
+ln -s /home/vagrant/sync /var/www/html
 systemctl start httpd.service
 
 ##php
