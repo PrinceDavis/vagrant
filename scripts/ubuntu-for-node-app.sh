@@ -48,4 +48,21 @@ sudo make install
 #Configuring redis
 echo "Configuring redis"
 sudo mkdir -p /etc/redis
-sudo cp /tmp/redis-stable/redis.conf /etc/redis
+sudo cp /home/vagrant/code/application/scripts/redis.conf /etc/redis
+sudo cp /home/vagrant/code/application/scripts/redis.service /etc/systemd/system/
+
+#adding a redis user account
+echo "Creating redis user"
+sudo adduser --system --group --no-create-home redis
+
+#create redis persistance directory
+sudo mkdir /var/lib/redis
+
+#Granting redis user sole permission to redis data store directory
+sudo chown redis:redis /var/lib/redis
+sudo chmod 770 /var/lib/redis
+
+#Test redis setup
+echo "Test redis setup"
+sudo systemctl start redis
+sudo systemctl status redis
