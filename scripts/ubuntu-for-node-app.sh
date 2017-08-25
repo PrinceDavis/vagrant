@@ -56,7 +56,7 @@ echo "Creating redis user"
 sudo adduser --system --group --no-create-home redis
 
 #create redis persistance directory
-sudo mkdir /var/lib/redis
+sudo mkdir -p /var/lib/redis
 
 #Granting redis user sole permission to redis data store directory
 sudo chown redis:redis /var/lib/redis
@@ -66,4 +66,9 @@ sudo chmod 770 /var/lib/redis
 echo "Test redis setup"
 sudo systemctl start redis
 sudo systemctl status redis
+echo "Restart redis"
 sudo systemctl restart redis
+
+#clean the bash history
+echo "Cleaning the bash history"
+cat /dev/null > ~/.bash_history && history -c && exit
