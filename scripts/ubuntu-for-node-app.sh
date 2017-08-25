@@ -3,7 +3,8 @@
 apt-get update -y
 
 #install essentail packages
-sudo apt-get install build-essential tcl
+sudo apt-get install build-essential -y
+sudo apt-get install tcl -y
 
 #install node 8.x
 echo "Installing node 8 and npm"
