@@ -31,3 +31,19 @@ sudo cp /home/vagrant/code/application/scripts/.mongodb /etc/systemd/system/mong
 echo "Startup and verify mongodb service"
 sudo systemctl start mongodb
 sudo systemctl status mongodb
+sudo systemctl enable mongodb
+
+#installing redis
+echo "Installing redis"
+cd /tmp
+curl -O http://download.redis.io/redis-stable.tar.gz
+tar xzvf redis-stable.tar.gz
+cd redis-stable
+echo "Compiling redis"
+make
+make test
+sudo make install
+
+#Configuring redis
+sudo mkdir /etc/redis
+sudo cp /tmp/redis-stable/redis.conf /etc/redis
