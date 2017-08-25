@@ -46,5 +46,6 @@ make test
 sudo make install
 
 #Configuring redis
-sudo mkdir /etc/redis
+echo "Configuring redis"
+sudo mkdir -p /etc/redis
 sudo cp /tmp/redis-stable/redis.conf /etc/redis
