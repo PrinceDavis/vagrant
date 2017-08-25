@@ -71,7 +71,7 @@ sudo systemctl restart redis
 
 #installing postgres
 echo "Installing postgres"
-sudo apt-get install postgresql postgresql-contrib
+sudo apt-get install postgresql postgresql-contrib -y
 
 #Verify postgres
 echo "Verifying postgres installation"
