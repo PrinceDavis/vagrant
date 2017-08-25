@@ -72,3 +72,11 @@ sudo systemctl restart redis
 #clean the bash history
 echo "Cleaning the bash history"
 cat /dev/null > ~/.bash_history && history -c && exit
+
+#installing postgres
+echo "Installing postgres"
+sudo apt-get install postgresql postgresql-contrib
+
+#Verify postgres
+echo "Verifying postgres installation"
+sudo which postgres
