@@ -66,3 +66,4 @@ sudo chmod 770 /var/lib/redis
 echo "Test redis setup"
 sudo systemctl start redis
 sudo systemctl status redis
+sudo systemctl restart redis
