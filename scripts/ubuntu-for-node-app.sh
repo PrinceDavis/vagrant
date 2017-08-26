@@ -38,7 +38,7 @@ sudo apt-get install -y mongodb-org
 
 #configuring mongodb
 echo "Configuring mongodb"
-sudo cp /home/vagrant/code/application/scripts/.mongodb /etc/systemd/system/mongodb.service
+sudo cp /home/vagrant/code/application/scripts/mongodb.service /etc/systemd/system/mongodb.service
 
 #startup mongodb
 echo "Startup and verify mongodb service"
@@ -60,7 +60,7 @@ sudo make install
 #Configuring redis
 echo "Configuring redis"
 sudo mkdir -p /etc/redis
-sudo cp /home/vagrant/code/application/scripts/redis.conf /etc/redis
+sudo cp /etc/redis/redis.conf /home/vagrant/code/application/scripts/
 sudo cp /home/vagrant/code/application/scripts/redis.service /etc/systemd/system/
 
 #adding a redis user account
