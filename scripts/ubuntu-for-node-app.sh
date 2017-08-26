@@ -6,6 +6,18 @@ apt-get update -y
 sudo apt-get install build-essential -y
 sudo apt-get install tcl -y
 
+
+#uninstall nginx that came with homestead
+sudo apt-get purge nginx nginx-common -y
+sudo apt-get autoremove
+
+#install nginx
+sudo apt-get install nginx -y
+
+#configuring nginx
+echo "Configuring nginx and firewall"
+
+
 #install node 8.x
 echo "Installing node 8 and npm"
 cd ~
