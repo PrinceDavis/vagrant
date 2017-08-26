@@ -77,6 +77,7 @@ sudo apt-get install postgresql postgresql-contrib -y
 echo "Verifying postgres installation"
 sudo which postgres
 
-#clean the bash history
-echo "Cleaning the bash history"
+#clean up
+echo "Cleaning up"
+rm -r /home/vagrant/code/
 cat /dev/null > ~/.bash_history && history -c && exit
