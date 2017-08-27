@@ -91,5 +91,4 @@ sudo which postgres
 
 #clean up
 echo "Cleaning up"
-rm -r /home/vagrant/code/
 cat /dev/null > ~/.bash_history && history -c && exit
