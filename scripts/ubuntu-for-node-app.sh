@@ -15,7 +15,8 @@ sudo apt-get autoremove
 sudo apt-get install nginx -y
 
 #configuring nginx
-echo "Configuring nginx and firewall"
+echo "Configuring nginx"
+sudo cp /home/vagrant/code/application/scripts/default /etc/nginx/sites-available/default
 
 
 #install node 8.x
@@ -60,7 +61,7 @@ sudo make install
 #Configuring redis
 echo "Configuring redis"
 sudo mkdir -p /etc/redis
-sudo cp /etc/redis/redis.conf /home/vagrant/code/application/scripts/
+sudo cp /home/vagrant/code/application/scripts/redis.conf /etc/redis/
 sudo cp /home/vagrant/code/application/scripts/redis.service /etc/systemd/system/
 
 #adding a redis user account
