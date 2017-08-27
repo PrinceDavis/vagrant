@@ -18,6 +18,8 @@ sudo apt-get install nginx -y
 echo "Configuring nginx"
 sudo cp /home/vagrant/code/application/scripts/default /etc/nginx/sites-available/default
 
+echo "Restarting nginx"
+sudo systemctl restart nginx
 
 #install node 8.x
 echo "Installing node 8 and npm"
