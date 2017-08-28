@@ -21,6 +21,16 @@ sudo cp /home/vagrant/code/application/scripts/default /etc/nginx/sites-availabl
 echo "Restarting nginx"
 sudo systemctl restart nginx
 
+#installing rabbitmq
+echo "Installing rabbitmq"
+echo "deb http://www.rabbitmq.com/debian/ testing main" >> /etc/apt/sources.list
+curl http://www.rabbitmq.com/rabbitmq-signing-key-public.asc | sudo apt-key add -
+apt-get update -y
+sudo apt-get install rabbitmq-server -y
+
+echo "Enable rabbitmq management console"
+sudo rabbitmq-plugins enable rabbitmq_management
+
 #install node 8.x
 echo "Installing node 8 and npm"
 cd ~
